@@ -1,0 +1,8 @@
+#!/usr/bin/stap
+
+probe udp.recvmsg {
+  //printf("sport:%d saddr:%s, dport:%d, daddr:%s proc:%s\n", sport, saddr, dport, daddr, execname())
+  if (dport == 53 && daddr != "10.147.0.1") {
+    printf("*****[ERR] %s", execname())
+  }
+}
