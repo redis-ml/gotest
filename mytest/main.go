@@ -1,6 +1,13 @@
-package mytest
+package main
 
 import "fmt"
 
-func Test() { fmt.Printf("test") }
+func test() { fmt.Printf("test") }
 
+type Pair struct {
+	x, y int
+}
+
+func findPath(m [][]int, start, end Pair) []Pair {
+
+}
